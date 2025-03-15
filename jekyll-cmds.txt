@@ -1,0 +1,7 @@
+bundle exec jekyll serve
+
+elixir gen_post.exs notes/ai-learning-problems.txt
+
+
+
+bundle install
