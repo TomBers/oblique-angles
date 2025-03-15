@@ -3,12 +3,52 @@ Mix.install([
   {:jason, "~> 1.2"}
 ])
 
-# Get command line arguments
-[title | rest] = System.argv()
-notes = Enum.join(rest, " ")
-
-# Functions
 defmodule PostGenerator do
+  def generate_from_notes_file(notes_path) do
+    # Extract title from file name (remove extension)
+    title =
+      notes_path
+      |> Path.basename()
+      |> Path.rootname()
+      |> String.replace("-", " ")
+      |> String.trim()
+
+    # Read notes from file
+    notes =
+      case File.read(notes_path) do
+        {:ok, content} ->
+          content
+
+        {:error, reason} ->
+          IO.puts("Error reading file: #{reason}")
+          exit(1)
+      end
+
+    # Generate blog post
+    create_post(title, notes)
+  end
+
+  def create_post(title, notes) do
+    date = Date.utc_today() |> Date.to_string()
+    post_path = "_posts"
+    file_name = date <> "-" <> String.replace(String.downcase(title), " ", "-") <> ".md"
+    path = Path.join(post_path, file_name)
+
+    # Ensure posts directory exists
+    unless File.exists?(post_path), do: File.mkdir_p!(post_path)
+
+    # Generate content
+    draft_content = draft(title, notes)
+    contents = contents(title, date, draft_content)
+
+    # Write file
+    File.write!(path, contents)
+
+    # Print confirmation
+    IO.puts("Created blog post: #{path}")
+    {:ok, path}
+  end
+
   def contents(title, date, draft) do
     """
     ---
@@ -39,20 +79,20 @@ defmodule PostGenerator do
 
     ## Main Points
 
-    ### The Convenience Paradox
-    <!-- Discuss how AI makes learning more accessible but might reduce effort -->
+    ### Key Insight 1
+    <!-- Develop your first main point here -->
 
-    ### Redefining Educational Goals
-    <!-- Explore how AI changes what we need to learn and how -->
+    ### Key Insight 2
+    <!-- Explore a contrasting or complementary idea -->
 
-    ### The New Teacher-Student Dynamic
-    <!-- Analyze how having an AI tutor changes the learning relationship -->
+    ### Key Insight 3
+    <!-- Provide a surprising perspective or deeper analysis -->
 
     ## Personal Reflection
-    <!-- Share your personal take or experience related to using AI for learning -->
+    <!-- Share your personal take or experience related to this topic -->
 
     ## Conclusion
-    <!-- Wrap up with a thought-provoking statement about the future of education with AI -->
+    <!-- Wrap up with a thought-provoking statement or call to action -->
 
     ---
 
@@ -72,29 +112,25 @@ defmodule PostGenerator do
 
     Structure the post with:
     1. An introduction that hooks the reader
-    2. Three main sections discussing:
-       - How AI might breed laziness vs. enhance learning
-       - The potential educational arms race
-       - How AI changes the purpose of education
-    3. A section on the benefits of having an AI teacher
-    4. A personal reflection
-    5. A thought-provoking conclusion
+    2. Three main sections with key insights related to the topic
+    3. A personal reflection section
+    4. A thought-provoking conclusion
 
-    Keep it conversational and nuanced, showing both sides of these issues.
+    Keep it conversational and engaging.
     """
 
     request_body =
       Jason.encode!(%{
-        "model" => "gpt-4",
+        "model" => "o3-mini",
         "messages" => [
           %{
             "role" => "system",
             "content" =>
-              "You are a thoughtful blog post writer who can see multiple sides of complex issues."
+              "You are a thoughtful blog post writer who can see multiple sides of complex issues. Please output formattted markdown, the output will go to a Jekyll blog."
           },
           %{"role" => "user", "content" => prompt}
-        ],
-        "temperature" => 0.7
+        ]
+        # "temperature" => 0.7
       })
 
     # Using built-in :httpc instead of HTTPoison
@@ -116,7 +152,7 @@ defmodule PostGenerator do
 
     case :httpc.request(:post, request, [], []) do
       {:ok, {{_, 200, _}, _, response_body}} ->
-        decoded = Jason.decode!(response_body)
+        decoded = Jason.decode!(to_string(response_body))
         decoded["choices"] |> List.first() |> Map.get("message") |> Map.get("content")
 
       error ->
@@ -142,22 +178,25 @@ defmodule PostGenerator do
         e ->
           IO.puts("Error with API: #{inspect(e)}")
           template(notes, keywords)
+      catch
+        _, reason ->
+          IO.puts("Error caught: #{inspect(reason)}")
+          template(notes, keywords)
       end
     end
   end
 end
 
 # Main execution
-date = Date.utc_today() |> Date.to_string()
-post_path = "_posts"
-file_name = date <> "-" <> String.replace(String.downcase(title), " ", "-") <> ".md"
-path = Path.join(post_path, file_name)
+case System.argv() do
+  [notes_path | _] ->
+    if File.exists?(notes_path) do
+      PostGenerator.generate_from_notes_file(notes_path)
+    else
+      IO.puts("Error: Cannot find notes file at #{notes_path}")
+    end
 
-unless File.exists?(post_path), do: File.mkdir_p!(post_path)
-
-draft_content = PostGenerator.draft(title, notes)
-contents = PostGenerator.contents(title, date, draft_content)
-File.write!(path, contents)
-
-# Print confirmation
-IO.puts("Created blog post: #{path}")
+  [] ->
+    IO.puts("Error: Please provide the path to a notes file")
+    IO.puts("Usage: elixir gen_post_from_notes.exs path/to/notes/file.txt")
+end

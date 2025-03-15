@@ -1,7 +1,7 @@
 bundle exec jekyll serve
 
-elixir gen-post.exs title "Notes"
+elixir gen_post.exs notes/ai-learning-problems.txt
 
-elixir gen-post.exs thoughts-on-ai-learning "A post about using AI for learning, considering things such as breeding laziness, the danger of an arms race, how it changes the pointn of education.  Also the huge benefits of having a teach you can ask any question to"
+
 
 bundle install
