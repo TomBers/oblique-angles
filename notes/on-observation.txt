@@ -1,0 +1,10 @@
+Popper, Science and falsification
+
+There is an experiment called a ticker tape timer.  Used to measure gravity.
+A device stamps ink on paper at a constant rate.  By pulling the tape through the timer and measuring the space of the dots you can find a value for gravity.
+
+Now imagine these devices a badly manufactured, and we get a million values for Gravity that differ from the "correct" view.
+
+Are these a million observations, or a single one.
+
+The key is the indpendence of evidence ...

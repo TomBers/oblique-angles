@@ -1,0 +1,7 @@
+This is the first part of building a multiplayer game in Elixir Phoenix and Phaser.js
+
+Motivation, Elixir Liveview makes it very easy to manage state and push changes to the client.
+
+Phaser is a FE game engine aiming to make it easy to make games for the front end.
+
+https://github.com/TomBers/build_a_boss
