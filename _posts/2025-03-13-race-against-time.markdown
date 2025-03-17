@@ -3,6 +3,7 @@ layout: post
 title:  "Thoughts on `The Mirage: Timothy Olson's Race Against Time (Full Documentary) | Nat Geo`"
 date:   2025-03-14 09:44:02 +0000
 categories: humour media
+published: false
 ---
 
 This morning I watched the documentary "The Mirage: Timothy Olson's Race Against Time" on National Geographic.
