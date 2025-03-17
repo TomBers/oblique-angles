@@ -1,0 +1,7 @@
+An experiment in creative writing.
+
+Problem - want to write about Robert Pirsig ideas about quality.
+
+I remember it having a large impact on me when I first read it many years ago.  But many of the details of the book.
+
+This is an experiment, to compare using a LLM to write an article and using MuDG to explore the same idea.
