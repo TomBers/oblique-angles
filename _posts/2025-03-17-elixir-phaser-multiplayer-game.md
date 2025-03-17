@@ -13,7 +13,7 @@ The outline of a simple structure for making games with Elixir Liveview and Phas
 
 [https://github.com/TomBers/build_a_boss](https://github.com/TomBers/build_a_boss)
 
-![Screenshot](/assets/img/game.png)
+![Screenshot]({{ site.baseurl }}/assets/img/game.png)
 
 ## Motivation
 
