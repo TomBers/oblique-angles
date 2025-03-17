@@ -36,7 +36,7 @@ The last part - FE game engine.  This is where I am less experienced, I came acr
 ## Why Elixir Phoenix & LiveView?
 
 - **State Management Made Easy:** LiveView allows you to easily manage and update state without the overhead of writing complex JavaScript.
-- **Real-time Updates:** With Phoenix channels integrated, you can push changes directly to the client in real timeâperfect for a responsive multiplayer game.
+- **Real-time Updates:** With Phoenix channels integrated, you can push changes directly to the client in real time, perfect for a responsive multiplayer game.
 - **Simplicity and Elegance:** The framework encourages you to focus on writing Elixir code, reducing the friction typically encountered in modern web development.
 
 Using LiveView, we're building a system that interacts smoothly with our game engine, ensuring our multiplayer components have robust real-time communication. This seamless integration offers a promising starting point for scalable, networked game development.
@@ -47,7 +47,7 @@ While Elixir handles the backend magic, **Phaser.js** is the front-end game engi
 
 - **Ease of Use:** Phaser provides an intuitive API that simplifies game creation, allowing you to quickly prototype gameplay mechanics.
 - **Rich Feature Set:** From physics to animations, Phaser offers a comprehensive toolkit that caters specifically to the needs of front-end game development.
-- **Active Community:** With a wealth of tutorials, examples, and [community projects](https://phaser.io/news/category/game))
+- **Active Community:** With a wealth of tutorials, examples, and [community projects](https://phaser.io/news/category/game)
 
 Integrating Phaser with Phoenix offers a multi-layered approach: while the game side focuses on user interactions and visual thrills, the backend powered by Phoenix ensures robust multiplayer support and real-time data handling.
 
@@ -55,7 +55,7 @@ Integrating Phaser with Phoenix offers a multi-layered approach: while the game 
 
 The combination of these two powerful frameworks allows us to overcome many challenges in **multiplayer** game development:
 
-- **Synchronization:** LiveViews prowess in pushing real-time updates meshes well with Phaserâs game loop, ensuring game state remains consistent across clients.
+- **Synchronization:** LiveViews prowess in pushing real-time updates meshes well with Phaser's game loop, ensuring game state remains consistent across clients.
 - **Scalability:** With Phoenix proven capability in handling concurrent connections gracefully, scaling our multiplayer logic becomes more achievable.
 - **Ease of Development:** Both frameworks emphasize simplicity and efficiency, reducing boilerplate code and letting you focus on game mechanics rather than infrastructure.
 
