@@ -23,7 +23,7 @@ email: tjcberman@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Writings of shorter or longer length, on my projects, thoughts and misc.
 baseurl: "/oblique-angles" # the subpath of your site, e.g. /blog
-url: "https://tombers.github.io/oblique-angles" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://tombers.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: TJCBerman
 github_username: TomBers
 

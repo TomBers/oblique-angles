@@ -28,7 +28,7 @@ Illustrating the ideas of quality, a metaphysics pre-language."
 
 You can see the results here:
 
-1. [Link to Pirsig article]({% link _posts/2025-03-17-pirsig.md %})
+1. [Link to Pirsig article](https://tombers.github.io/oblique-angles/ai/education/2025/03/17/pirsig.html)
 2. [As a Graph](https://mudg.fly.dev/Robert%20Pirsig%2C%20Zen%20and%20the%20Art%20of%20Zen%20and%20the%20Art%20of%20Motocycle%20Maintenance%20and%20Lila.%20Illustrating%20the%20ideas%20of%20quality%2C%20a%20metaphysics%20pre-language.) :: [As an Article](https://mudg.fly.dev/Robert%20Pirsig%2C%20Zen%20and%20the%20Art%20of%20Zen%20and%20the%20Art%20of%20Motocycle%20Maintenance%20and%20Lila.%20Illustrating%20the%20ideas%20of%20quality%2C%20a%20metaphysics%20pre-language./linear)
 
 Feel free to share your thoughts and add to the discussion; especially if you hated the results.
