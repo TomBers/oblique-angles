@@ -1,12 +1,11 @@
 ---
 layout: post
-title: "erlang digraph"
+title: "In paraise of Erlang digraph"
 date: 2025-03-17 09:44:02 +0000
 categories: ai education
 published: false
 ---
-# erlang digraph
-# erlang digraph
+
 
 Welcome to a journey into one of the most versatile structures in computer science, presented in a novel light: the Erlang digraph. Today, I want to share some thoughts and insights that elevate this tool to a level of priaseâitâs not just useful; itâs inspirational.
 
