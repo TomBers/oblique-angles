@@ -1,0 +1,11 @@
+Today Wed 19th March 2025.  I was working on what is a techncially very simple feature, but has a big impact on readability.
+
+In MuDG, I added a feature to read the graph as a threaded conversation (a more linear, familiar format).  This feature allows users to navigate the graph more easily and understand the relationships between nodes.
+
+The first version of this was just rendering the nodes as a flat list indented to represent depth.  This morning, I added a simple toggle to hide and show text and a button to expand / collapse all nodes.
+
+I think the result is quite satisfying. The toggle allows users to focus on the structure of the graph without getting overwhelmed by the text, while the expand/collapse button provides a quick way to explore deeper levels of the graph. This makes it easier for users to understand the relationships between nodes and navigate the graph more efficiently.
+
+Compare below with the previous version:
+Screenshot 1
+Screenshot 2
