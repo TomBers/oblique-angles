@@ -1,0 +1,11 @@
+There has been alot of anxiety I feel and see reflected online about what an individual can do stay stay/get ahead in the current world.
+Persistent concerns about automation / AI.  The uncertainty is uncomfortable.
+
+What would have taken time and effort in the recent past can be replicatd quickly and easily (if not today, then soon)
+
+The common advice I see posted is to be authentic.  To work / do things that have instrinsic value to you and to find other people with the
+same values.
+
+I think this is mostly good advice and aligning your interests with your work and with your friends does seem an ideal, but I would imagine quite rare.
+
+To that end, my attempt at authenticity was to build MuDG - a multiplayer llm learning system, to help people explore ideas together and to learn from each other while allowing deep discussion.
