@@ -1,0 +1,49 @@
+On personas
+
+Some advice for anyone starting a business is to draw up a list of 'ideal' users or personas.
+The idea is that by thinking of the sort of behaviours and even communities these 'people' inhabit can both focus your thinking and lead to a effective communiation path.
+
+As a test, I gave Claude a description of [MuDG](url) and this is what it came up with:
+
+
+Based on the MuDG vision, I'll create some user personas that represent potential users who might benefit from this multi-user dialectical graph platform.
+
+# MuDG User Personas
+
+## Professor Maya Chen
+**Background:** Tenured professor of Interdisciplinary Studies at a research university
+**Needs:** Maya struggles to help students see connections across different disciplines. Her courses touch on philosophy, technology, and social sciences, but students often compartmentalize knowledge.
+**Goals:** Create collaborative learning environments where students can visualize how concepts connect across traditional subject boundaries.
+**Frustrations:** Traditional LMS platforms are linear and don't support the kind of networked thinking she wants to encourage.
+
+## Darius Williams
+**Background:** Self-taught software developer working at a startup
+**Needs:** Continuous learning across multiple domains (programming languages, design patterns, product management) without formal structure.
+**Goals:** Build a personal knowledge repository that grows organically as he explores new technical concepts.
+**Frustrations:** Current note-taking tools don't effectively show relationships between concepts, making it hard to integrate new knowledge with existing expertise.
+
+## Learning Pod "Quantum Thinkers"
+**Background:** Five graduate students from different universities who formed an online study group
+**Needs:** A shared space to collaborate on complex topics spanning quantum computing, ethics, and mathematical foundations.
+**Goals:** Collectively build understanding while maintaining individual perspectives and contributions.
+**Frustrations:** Existing collaboration tools either focus on documents (lacking conceptual structure) or are too rigid in their organization.
+
+## Eliza Hernandez
+**Background:** High school science teacher with students of varying abilities
+**Needs:** Ways to differentiate learning while maintaining a coherent class-wide knowledge structure.
+**Goals:** Help students visualize connections between scientific concepts while allowing them to explore at their own pace and depth.
+**Frustrations:** Current educational technology treats knowledge as linear progressions rather than interconnected webs.
+
+## Marcus Johnson
+**Background:** Researcher in emerging AI ethics working on a book
+**Needs:** A way to organize complex research across hundreds of papers, interviews, and personal insights.
+**Goals:** Identify novel connections between seemingly unrelated concepts and create a comprehensive conceptual framework.
+**Frustrations:** Traditional outlining tools force hierarchical structures that don't reflect the networked nature of his thinking.
+
+## "Renaissance" Learning Community
+**Background:** Online community of lifelong learners with diverse backgrounds
+**Needs:** A shared environment to explore interdisciplinary topics without centralized authority.
+**Goals:** Collaboratively build knowledge graphs that represent multiple perspectives and approaches to complex questions.
+**Frustrations:** Most online forums are structured around threads rather than interconnected concepts, making it difficult to see the bigger picture.
+
+Each of these personas would engage with MuDG differently, but all would benefit from its networked approach to knowledge construction, collaborative features, and persistent knowledge graphs.
