@@ -1,0 +1,40 @@
+Experiment in program language composition.
+
+The idea came about in observing that most programs are infact state machines.  At their very essence programs receive input, which causes a change which leads to an output.
+
+After writing large programs, that grow over time, I notice that what should be central "the state" of the code takes a second place to incidental complexity, meaning that state is incidental to the running of the program instead of the primary concern.
+
+This lead to an idea, what if writing software was primarily about designing the state machine and the rest was essentially derived from that. (I was thinking of writing the state-machine, which could then generate Web/API/Mobile Apps from a single 'code-base')
+
+There are some prior art in this area.
+https://hackage.haskell.org/package/reactive-banana
+https://gist.github.com/andymatuschak/d5f0a8730ad601bcccae97e8398e25b2
+https://spotify.github.io/mobius/
+https://xstate.js.org/
+
+What would the most minimal PoC of this idea.
+
+I have long been a fan of Elixir, Phoenix and LiveView.
+
+Liveview especially takes this sort of approaach to state-management, where every event to the server receives a copy of the state and returns a new state.  This makes it a perfect test-bed for the idea.
+
+So the first step was to think of a minimal representation a state-machine.
+My first blush idea was:
+Inputs - this could be text, a button, an api-request or a timer.
+State Transitions - Given the current state and an event from an input, what side effects and new state occur
+Outputs - A function that takes in the state and displays it.
+
+Meta-programming and Elixir Liveview
+
+Once I had the representation, I wanted to use this representation to generate a working LiveView.  Each of the ideas (Input/Transition/Output) clearly map to elements of LiveView.
+
+Inputs -> handle_event
+State Transitions -> the method executed in the handle_event
+Output -> the generate heex template
+
+
+Example 1 - Todo list
+
+See code
+
+Example - Traffic light
