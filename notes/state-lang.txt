@@ -1,0 +1,113 @@
+Experiment in program language composition.
+
+The idea came about in observing that most programs are infact state machines.  At their very essence programs receive input, which causes a change which leads to an output.
+
+After writing large programs, that grow over time, I notice that what should be central "the state" of the code takes a second place to incidental complexity, meaning that state is incidental to the running of the program instead of the primary concern.
+
+This lead to an idea, what if writing software was primarily about designing the state machine and the rest was essentially derived from that. (I was thinking of writing the state-machine, which could then generate Web/API/Mobile Apps from a single 'code-base')
+
+There are some prior art in this area.
+"https://hackage.haskell.org/package/reactive-banana"
+"https://gist.github.com/andymatuschak/d5f0a8730ad601bcccae97e8398e25b2"
+"https://spotify.github.io/mobius/"
+"https://xstate.js.org/"
+
+What would the most minimal PoC of this idea.
+
+I have long been a fan of Elixir, Phoenix and LiveView.
+
+Liveview especially takes this sort of approaach to state-management, where every event to the server receives a copy of the state and returns a new state.  This makes it a perfect test-bed for the idea.
+
+So the first step was to think of a minimal representation a state-machine.
+My first blush idea was:
+Inputs - this could be text, a button, an api-request or a timer.
+State Transitions - Given the current state and an event from an input, what side effects and new state occur
+Outputs - A function that takes in the state and displays it.
+
+Meta-programming and Elixir Liveview
+
+Once I had the representation, I wanted to use this representation to generate a working LiveView.  Each of the ideas (Input/Transition/Output) clearly map to elements of LiveView.
+
+Inputs -> handle_event
+State Transitions -> the method executed in the handle_event
+Output -> the generate heex template
+
+
+Example 1 - Todo list
+
+```
+defmodule StateLang.States.Todo do
+  @state %{"todos" => []}
+  # State funcs
+  def add_note(state, params), do: %{state | todos: state.todos ++ [Map.get(params, "Todo")]}
+  # Output funcs
+  def todo_state(state), do: Enum.join(state.todos, ", ")
+
+  def state_machine do
+    %{
+      "initial_state" => @state,
+      "module" => __MODULE__,
+      "inputs" => [
+        %{
+          "name" => "Todo",
+          "transition" => "add_note",
+          "type" => "text"
+        }
+      ],
+      "outputs" => [
+        {
+          "Todos",
+          "list",
+          :todo_state
+        }
+      ],
+      "transitions" => [
+        {"add_note", :add_note}
+      ]
+    }
+  end
+end
+```
+
+Example - Traffic light
+```
+defmodule StateLang.States.TrafficLights do
+  @state %{"output" => "Red", "cycles" => 0}
+
+  # State Red -> Orange -> Green -> Red * 5 then End
+  # State funcs
+  def change_state(%{cycles: cycles} = state, _) when cycles >= 5, do: %{state | output: "END"}
+  def change_state(%{output: "Red"} = state, _), do: %{state | output: "Orange"}
+  def change_state(%{output: "Orange"} = state, _), do: %{state | output: "Green"}
+  def change_state(%{output: "Green"} = state, _), do: %{output: "Red", cycles: state.cycles + 1}
+
+  # Output funcs
+  def output_state(state), do: "#{state.output} [cycles: #{state.cycles}]"
+
+  def state_machine do
+    %{
+      "initial_state" => @state,
+      "module" => __MODULE__,
+      "inputs" => [
+        %{
+          "name" => "Change State",
+          "transition" => "change_state",
+          "type" => "button",
+          "style" =>
+            "rounded-md bg-black-800 py-2 px-4 mb-4 border border-transparent text-center text-sm transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2"
+        }
+      ],
+      "outputs" => [
+        {
+          "Output",
+          "text",
+          :output_state
+        }
+      ],
+      "transitions" => [
+        {"change_state", :change_state}
+      ]
+    }
+  end
+end
+```
