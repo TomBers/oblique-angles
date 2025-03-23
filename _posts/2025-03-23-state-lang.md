@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Experiment: A FSM first approach to programmming"
+title: "Experiment: A FSM first approach to programming"
 date: 2025-03-23 09:44:02 +0000
 categories: ai education
 ---
