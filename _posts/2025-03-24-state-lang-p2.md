@@ -1,39 +1,36 @@
 ---
 layout: post
-title: "state lang p2"
-date: 2025-03-24 09:44:02 +0000
+title: "A FSM first approach to programming part 2"
+date: 2025-03-24 04:44:02 +0000
 categories: ai education
 ---
-# state lang p2
+## tldr:
+
+Extend state-lang to include full template rendering, making a fully flexible application building tool
+Some fun extras - a built-in timer to act as a 'game-loop' for websites and setting up of a api endpoint,
+so any site can have a url for web requests / webhooks.
+
+[Code](https://github.com/TomBers/state_lang)
+
 ---
-title: "state lang p2: A FSM First Approach to Programming Part 2"
-date: 2023-10-XX
-categories: [FSM, state, lang, templates, API]
----
+## A FSM first approach to programming part 2
 
-## Introduction
+[The first post](https://tombers.github.io/oblique-angles/ai/education/2025/03/23/state-lang.html) suggested a state first approach to program design, where a state machine was the primary part of the progam and the rest was derrived.
 
-Imagine a tool that not only manages your application's state but also renders fully dynamic web templates without needing to switch contexts. In our previous post, ["state lang"](https://tombers.github.io/oblique-angles/ai/education/2025/03/23/state-lang.html), we introduced a state-first approach to program design that placed the state machine at the core of application logic. Although effective, its rendering system was limited to simple iterations of inputs and outputs. Today, we extend the concept. *tldr:* We extend state lang to include full template renderingâturning it into a fully flexible application building tool. And yes, there are fun extras too, like a built-in timer (a web game loop) and an API endpoint for handling web requests and webhooks!
+One of the most obvious drawbacks were the rendering was extemely limited. Just an interation of inputs and outputs.
 
-## Extending the State Lang: Going Beyond Just State Management
+The next step was to make the rendered page completely general.
 
-At its heart, state lang reimagined programming by making state transitions central to application design. However, one significant limitation was that rendering was extremely basic. We were simply iterating over inputs and outputsâinsufficient for modern web development. The next evolution was to integrate full template rendering, transforming every state into a fully rendered page.
+## Heex to the rescue
 
-This exciting enhancement leverages the powerful **Heex** templating engine from Phoenix Liveview. Instead of rethinking the web's current core technologies (HTML, CSS, and JS) altogether, we simply build on top of an existing, battle-tested system. With Heex, you now have:
+While I (quietly) hoped to rethink the whole process of rendering to the web, replacing in its entirety the current way the web works (HTML, CSS and JS); that is a problem for another day.
 
-- **Full templating capabilities:** Create dynamic, interactive, and visually rich pages.
-- **Seamless integration:** Integrate with your state-first logic without complex rewrites.
-- **Flexibility:** Build websites, APIs, and even mobile apps from a single code base.
+The simplest and easiest is to leveage the existing template language in [Liveview Heex](https://hexdocs.pm/phoenix_live_view/assigns-eex.html).  This allows a full templating engine allowing the building of fully general apps)
 
-Check out the complete example of our new implementation on [GitHub](https://github.com/TomBers/state_lang).
-
-## Key Insights and Extensions
-
-### 1. A Modern Templating Revolution in State Lang
-
-The introduction of Heex is a game-changer for state lang. By integrating this template language, you can now build fully dynamic apps without losing the benefits of explicit state management. The code snippet below demonstrates how a state machine transitions through different states while rendering a complete template:
+A full example [code - https://github.com/TomBers/state_lang](https://github.com/TomBers/state_lang):
 
 ```elixir
+
 defmodule StateLang.States.TemplateTest do
   use StateLangWeb, :live_view
 
@@ -59,14 +56,13 @@ defmodule StateLang.States.TemplateTest do
   def output_state(state), do: "#{state.output} [cycles: #{state.cycles}] count: #{state.count}"
 
   def render(assigns) do
-    ~H\"""
+    ~H"""
     <div>
       <p class="output-name">Current State:</p>
       <p class="output-value">{output_state(@state)}</p>
 
       <.button
         phx-click="change_state"
-        class="rounded-md bg-black-800 py-2 px-4 mb-4 border border-transparent text-center text-sm transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2"
       >
         Change State
       </.button>
@@ -80,7 +76,7 @@ defmodule StateLang.States.TemplateTest do
         </ul>
       </div>
     </div>
-    \"""
+    """
   end
 
   def state_machine do
@@ -96,41 +92,46 @@ defmodule StateLang.States.TemplateTest do
 end
 ```
 
-### 2. Built-In Game Loop: The Clock That Ticks
+## Event Log
 
-One of the fun extensions included is a built-in timer function that acts like a game loop for your web application. Much like a clock in a video game constantly updating the screen, this timer ticks every few milliseconds, allowing your app to update smoothly without any manual intervention. For example:
+Each state change is stored, so the precise state, action and new state are recorded.  This helps both in debugging issues, but also time travel, you can restart the app in any state you want.  Meaning that complex state management does not have to restart from the beginning, meaning if you have completed costly computation you do not have to rerun.
 
+## Testing
+As the state is a pure function - it make testing far simpler, without having to scaffold rendered Liveview components.
+
+## Fun extensions
+
+While not core to the central idea, there are a couple of extensions, experimenting with what is possible.
+
+# Clock
+
+Elixir makes it very each to setup callback functions to act as a clock.  In the same way a game loop works, the clock ticks every N milliseconds and you can write a function to update the state.
+
+When writing you simply:
 ```elixir
-# Timer function
-def timer(state), do: %{state | count: state.count + 1}
+ # Timer function
+ def timer(state), do: %{state | count: state.count + 1}
 ```
 
-This simple addition enables continuous state updates, making your application interactive and responsive by default.
 
-### 3. A Versatile API for Seamless Integration
+# API
 
-Another significant extension is the inclusion of an API endpoint. By setting up a message inbox in every app, you can receive and process messages from other systems with ease. Itâs as simple as defining:
+I thought it would be interesting for every app generated to have a message inbox, which can process messages from other systems.  This was as simple as writing an API endpoint that broadcast a pubsub message and the program having a function for dealing with messages.
 
+You simply write:
 ```elixir
-# Message received function
-def message_call(state, _), do: state
+ # Message recieved function
+  def message_call(state, _), do: state
 ```
 
-This approach not only simplifies the integration of external web requests and webhooks but also transforms your state machine into a reactive system capable of handling asynchronous events from various sources.
+## Next steps
 
-## Personal Reflection
+There are a couple of obvious next steps.
+- Persist state, this could be storing / loading state at any transition point
+- API, for an API you want the server to always be on, listening to requests.  This would be as simple as using a GenServer and adding it to the supervision tree.
+- Mobile Apps, I think this would be a good use case for [https://github.com/liveview-native/live_view_native](https://github.com/liveview-native/live_view_native)
 
-Working on this project has been an enlightening journey. Iâve always believed that explicit state management carries immense power when applied correctly, but the visual limitations were frustrating. By extending state lang with Heex, the blend of a powerful state machine and modern web rendering feels like a natural evolution. Itâs a reminder of how even simple ideas can transform into robust systems with the right tools and mindset. I'm particularly excited about the potential of a single code base that can handle websites, APIs, and mobile apps alike. It opens up endless possibilities for developers looking for simplicity without sacrificing functionality.
-
-## Conclusion: A New Era for State-driven Applications
-
-The evolution of state lang is an example of how thinking differently about programming paradigms can yield practical benefits. By extending state lang to fully include template rendering, combining a continuous timer and a built-in API, we pave the way for building truly flexible, state-aware applications. As we look to the future, a few next steps become apparent:
-
-- Persist state to allow for resuming complex computations.
-- Enhance the API to ensure the server is always ready to process external requests.
-- Explore mobile app integrations with tools like Live View Native for a seamless cross-platform experience.
-
-This project is a bold step towards a unified application-building toolâa tool where state, templates, and extension points like timers and APIs are all part of one coherent vision. What are your thoughts on state-driven programming? Could this approach redefine how we build digital experiences? Letâs spark a conversation!
+So from a simple idea had about 5 days ago, it seems that it is not an impossible dream to have a single code base, with more expliict state-management that could build websites, API's and Mobile apps.
 
 ---
 
