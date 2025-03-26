@@ -1,0 +1,20 @@
+On of the challenges as a software developer are questions of taste.
+
+There can be a huge difference between the technical challenge of implementing something and the impact it can have.
+
+As a developer it can be tempting to see these things as un-important as they are such a trivial change, but the impact can be significant, perhaps even the difference between success and failure.
+
+One example I worked on tdoay.  I am dealing with graphs that can expand downward or upward (see screenshots)
+
+The actual change is
+
+```js
+layout: {
+    name: 'dagre',
+    rankDir: 'BT' or 'TB',
+    }
+```
+
+The psycology of growing knowledge or digging down. Which is right - it is impossible to say, a matter of individual taste.
+
+So you either bet on your individual taste or if you are large enough run A/B tests.
