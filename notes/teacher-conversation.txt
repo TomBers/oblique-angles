@@ -1,0 +1,22 @@
+Title - The human says no.  Reflections on a conversation with a teacher
+
+I was recently at a friends birthday.  By chance I was sitting by a history teacher.  As someone who
+interested in the impact of AI careers and industries I asked him his thoughts.
+
+There was an instant freeze in his manner, that I had brought up something that was both obvious and tedious.
+
+His position was that it would have between zero and negative effect on education.  How people learn was a 'solved' problem and
+fundamentally analogue process (his words).
+
+He had be singularly unimpressed with the results and gave an example of a student handing in an essay that confabulated a particular organisation and had mixed Karl Marx and Adam Smith to a new invented person Karl Smith or Adam Marx (I forget the mixup)
+
+I had countered that as a software developer I had been impressed and that in many ways it is a better software developer than I am despite 20 years of professional experience (I will leave it to the reader to reach their own conclusions)
+
+The teacher went on to theorise that while AI will never be great at "facts" but conceeded that perhaps code had different properties.
+
+He also mentioned that being trained on the internet corpus it was filled with bias and "slop".
+
+I took a few things away from the conversation.
+1) A complete lack of curiosity, that a conclusion had be made and there was no moving from that position.
+2) That his field was essentially solved, and his role in it essential.
+3) A distate to revisiting "settled" arguments.  While I can see some of the issues around halluncinations having some validity years ago, in my experence they are far less prominant give the huge improvments.
