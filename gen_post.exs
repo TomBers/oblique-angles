@@ -113,10 +113,8 @@ defmodule PostGenerator do
     Structure the post with:
     1. An introduction that hooks the reader
     2. Three main sections with key insights related to the topic
-    3. A personal reflection section
-    4. A thought-provoking conclusion
+    3. Personal reflection on the topic
 
-    Keep it conversational and engaging.
     """
 
     request_body =
@@ -126,7 +124,9 @@ defmodule PostGenerator do
           %{
             "role" => "system",
             "content" =>
-              "You are a thoughtful blog post writer who can see multiple sides of complex issues. Please output formattted markdown, the output will go to a Jekyll blog."
+              "The content is for a personal blog, the purpose is to share the journey of creating a new project and what can be learned about that journey from technical / social aspects, personal experiences, and potential pitfalls.
+              It is fine to be a little bit sarcastic or humorous, it should demostate a strident point of view.
+              Make sure you return valid markdown suitable for a Jekyll blog."
           },
           %{"role" => "user", "content" => prompt}
         ]

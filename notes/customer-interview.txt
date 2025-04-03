@@ -17,7 +17,7 @@ Customer realisation
 - Why not use - Obsidian, LLM, Wikipedia
 
 Lack of Virality
-- Challenge of quick flshy answer (Swimming against the tide).
+- Challenge of quick flashy answer (Swimming against the tide).
 The project aims to have some deeper value, to challenge and deepen understanding.
 One other project they mentioned.
 Tik-tok Wikipedia - social wave, https://wikitok.vercel.app/
