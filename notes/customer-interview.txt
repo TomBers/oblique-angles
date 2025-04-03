@@ -1,6 +1,12 @@
-The whys?
+Reflections on customer interview
 
-What are the problems?
+A couple of days ago I spoke with (a potential) customer, and it was very helpful, in both ideas
+and dealing with my own discomfort.
+
+It can be very difficult when you have invested time and effort into a project to hear it either dismssed or misunderstood.
+
+What I saw the point of MuDG as?
+A response to:
 - Noisy Addictive Interfaces (Discord, Slack & Twitter)
 - LLM converdations are never returned to, easier to start a new one
 - Difficult to follow conversations that are branching, Give Philosopher examples
@@ -10,24 +16,29 @@ Customer realisation
 - Objections
 - Why not use - Obsidian, LLM, Wikipedia
 
-Virality
-- Challenge of quick flshy answer (Swimming against the tide)
-Tik-tok Wikipedia - social wave
+Lack of Virality
+- Challenge of quick flshy answer (Swimming against the tide).
+The project aims to have some deeper value, to challenge and deepen understanding.
+One other project they mentioned.
+Tik-tok Wikipedia - social wave, https://wikitok.vercel.app/
+I can see why this is popular, and how it can be shared easily, but I wonder on the actual long lasting educational value.
 
 
-The importance of Demo
+
+The importance of Demo, I showed 3 specific examples.
 -> On third time it seemed to click
 Are you demoing what you think you are demoing?
 
 Passivitisation
 Pull towards automatic systems
 Not only answer questions - but suggest them
+Suggested removing the option to actual ask your own questions but to have buttons with potential questions.  The trade off of auomation of thought vs augmentation of thought.
 Easier == Better??
 Fricition as Filter
 
-Mention - Persoanal use -> Solving your own problem
+ Persoanal use -> Solving your own problem
 
-Concepts of Ownership
-Wikipedia ownership
+Concepts of Ownership, I would like people to "own" their graphs, but have seen the corruption of entities such as Mozilla and Wikipedia, that have been hijacked by a small number of people.
+
 
 Privacy - pay to share or pay to make private.
