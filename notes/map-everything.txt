@@ -1,0 +1,25 @@
+The quest to know everything.
+
+Homo sum, humani nihil a me alienum puto (I am man, nothing that is human is indifferent to me)
+
+Outline:
+Why?
+
+Many years ago, I was living in a flat that was a converted hospital from the Crimean war, staffed by Florance Nightingale.  The slightly odd layout of the flat had a 3/4 roof high storage space that in the center of the flat, creating the main living area.  This created a large wall with space on top.  I had the idea of getting a large industrial roll of paper and trying to write out every single thing I knew.
+
+Large diagram with links between places, ideas, books, music. movies etc.  I wanted to join everything I had ever thought into some sort of structure, a non-linear diary.
+
+I ended up leaving the flat, lost track of the diagram, but the idea remained.
+
+The goal?
+
+What if you could map everything?  Connect ideas and follow them as far as you wish?
+What of you could get answers to any question, define key terms, find specific thinkers or real world examples.?
+What if you challenge ideas to get the pros and cons, or generate a synthesis of 2 ideas?
+What if you could share them or just specific thoughts?
+What if you could actually build them collabratively, with many people working at the same time to build a structure of interest?
+
+
+How?
+
+I have been working on this for a while now and an initial version is live and free https://mudg.fly.dev/
