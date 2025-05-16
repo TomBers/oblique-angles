@@ -6,7 +6,7 @@ categories: ai education
 ---
 
 
-# Homo sum, humani nihil a me alienum puto (I am man, nothing that is human is indifferent to me)
+# Homo sum, humani nihil a me alienum puto *(I am man, nothing that is human is indifferent to me)*
 
 Many years ago, I was living in a flat that was a converted hospital from the Crimean war, staffed by Florance Nightingale.  The slightly odd layout of the flat had a 3/4 roof high storage space that in the center of the flat, creating the main living area.  This created a large wall with space on top.  I had the idea of getting a large industrial roll of paper and trying to write out every single thing I knew.
 
