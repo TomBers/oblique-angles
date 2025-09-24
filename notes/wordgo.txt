@@ -1,0 +1,30 @@
+Wordgo | Using Neural Networks to open a new area of gaming
+
+The ability to treat words as numbers (vectors) opens up a whole new category of gaming possibilities.
+
+By tokenising words, we get to treat a word as a number with geometric properties.  The classic example is Cosine distance which allows us to score the semantic similarity of words.
+
+This makes things quantifiable and scorable.
+
+*Insert diagram
+
+The idea of WordGo is to combine vocabulary with positional awareness.
+
+WordGo is a strategic turn-based game that combines vocabulary and tactical positioning.
+Players create words on a game board while competing to claim randomly placed bonus tiles (2x and 4x multipliers) and achieve the highest score.
+The game rewards thematic word clusters - when words sharing similar meanings or topics are placed physically adjacent to each other (connecting up, down, left, or right), they earn bonus points.
+For example, placing fruit words like Apple, Banana, and Cherry next to each other will yield a higher score than scattered unrelated words like Moon, Wall, and Red.
+Choose from three play modes: single-player practice, competitive multiplayer, or challenge an AI opponent.[Insert screen shot]
+
+Dynamic balance of position and eord choice.  The game rewards good positional play along with good word clustering.
+
+Scoring open questions
+Include word length ?
+Multiplier scores tiles
+What is the end game, all squares filled, score reached or time limit
+
+Techncial bits:
+
+Tokeniser model from HuggingFace
+Bumblebee to Server the model
+Nx to perform Tensor calculations.
