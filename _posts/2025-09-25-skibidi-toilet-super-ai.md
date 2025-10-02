@@ -19,7 +19,7 @@ There is a good chance that super intelligence methods are unrecognisable to us,
 
 ### Proposal - The Skibidi toilet test
 
-For the uninitiated, Skibidi toilet is a viral meme / web-series prominently featuring a man's head in a toilet (singing?). That might end up aa a Hollywood movie [Forbes](https://www.forbes.com/sites/danidiplacido/2025/05/21/its-official-michael-bay-will-direct-the-skibidi-toilet-movie/){:target="_blank"}
+For the uninitiated, Skibidi toilet is a viral meme / web-series prominently featuring a man's head in a toilet (singing?). That might end up as a Hollywood movie [Forbes](https://www.forbes.com/sites/danidiplacido/2025/05/21/its-official-michael-bay-will-direct-the-skibidi-toilet-movie/){:target="_blank"}
 
 Having long ago left my youth, I look at it with a mixture of bafflement and surprise.  What even is it? Why is it popular?
 But [the numbers](https://www.youtube.com/shorts/tzD9OxAHtzU){:target="_blank"} don't lie(?), it is hugely popular and entered my mind unbidden.
