@@ -1,0 +1,43 @@
+Projects summary October 2025
+
+Main Project:
+
+MuDG:
+
+Collaborative learning tool based on LLM's.
+
+Direct LLM ansers into a graph datastucture, allowing further depth of different routes, drilling down into the specifics of a topic and learning related topics.
+
+Innovations:
+
+Make AI conversations public allowing others to contribute to the learning process and correct potential rabbit holes.
+Store as a graph, so you can branch and combine different parts of a conversation.
+Visualisation and storage so knowlegde can be built over time
+
+- mudg.fly.dev
+
+Games Projects:
+
+WordGo
+
+Explore how AI tools to make new games possible.  Specifically word distance.  For the first time we can treat words as numbers (vectors) and
+ask question like, "how similar are these 2 words".  Using that as a base, the game uses a Go like board where players place pieces, each piece is associated with a word,
+the scoring is a balance of positional play and the similairy of the words choosen.
+
+- wordgo.fly.dev
+
+TimeLine
+
+How well do you know your history?  Put these events in historical order.  Two modes, drop the events into the buckets, or full timeline with duration and
+overlapping time periods.
+
+timeline-game.fly.dev
+
+Ongoing experiment:
+
+Statelang
+
+An experiment to think about programming in a state first manner. Exploring how we can reframe software design by centering on state, and let the rest of the applications, whether it’s a web, API, or mobile apps be automatically derived from that state machine.
+
+https://tombers.github.io/oblique-angles/ai/education/2025/03/23/state-lang.html
+https://github.com/TomBers/state_lang
